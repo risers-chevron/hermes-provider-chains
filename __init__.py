@@ -19,6 +19,7 @@ Model picker integration:
     startup and whenever chains are created/deleted via the dashboard API.
 """
 
+import importlib.util as _ilu
 import logging
 import os
 from pathlib import Path
@@ -26,8 +27,13 @@ from pathlib import Path
 logger = logging.getLogger(__name__)
 
 # ── Import shared sync helpers ──────────────────────────────────────────────
-# _sync.py lives in the same directory as this file.
-from _sync import base_hermes_home, load_chains, sync_virtual_providers
+# Use importlib so this works regardless of sys.path (e.g. coder profile).
+_spec = _ilu.spec_from_file_location("_pc_sync", Path(__file__).parent / "_sync.py")
+_pc_sync = _ilu.module_from_spec(_spec)
+_spec.loader.exec_module(_pc_sync)  # type: ignore[union-attr]
+base_hermes_home = _pc_sync.base_hermes_home
+load_chains = _pc_sync.load_chains
+sync_virtual_providers = _pc_sync.sync_virtual_providers
 
 
 # ── Option B hook ───────────────────────────────────────────────────────────
