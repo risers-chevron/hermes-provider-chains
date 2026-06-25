@@ -1,5 +1,10 @@
 # hermes-provider-chains
 
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![Hermes](https://img.shields.io/badge/Hermes-v17%2B-purple)
+
 A [Hermes](https://nousresearch.com/hermes) plugin that adds named provider fallback chains.
 
 Define an ordered list of providers once, assign the chain by name anywhere Hermes accepts a model — cron jobs, blueprints, profiles, subagents. When the first provider fails (rate limit, outage, timeout), Hermes automatically tries the next one in the chain.
@@ -56,6 +61,8 @@ Each chain card shows a copyable `chain:<name>` reference you can paste directly
 | Max tokens | Cap output tokens for this provider |
 | Temperature | Sampling temperature (0.0–2.0) |
 | Retry count | Retry this provider N times before advancing to the next entry |
+| Thinking | Enable or disable extended thinking — `inherit` (default), `enabled`, `disabled`. Only effective on models that support extended thinking (e.g. Claude 3.5+) |
+| Thinking effort | Budget when thinking is enabled — `low`, `medium`, or `high`. `inherit` uses the provider default |
 | Base URL | Override the provider's base URL |
 | API key | Override the provider's API key (use Infisical for production secrets) |
 
@@ -242,6 +249,12 @@ If you want this in Hermes, open an issue or PR requesting a `build_models_paylo
 - Python 3.10+
 - FastAPI (included with Hermes)
 - `ruamel.yaml` (included with Hermes; only needed for model picker sync)
+
+## Authors
+
+- **[risers-chevron](https://github.com/risers-chevron)**
+
+Built with [Claude Code](https://claude.ai/code) by Anthropic.
 
 ## License
 

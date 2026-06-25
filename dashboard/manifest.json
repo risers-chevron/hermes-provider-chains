@@ -1,0 +1,14 @@
+{
+  "name": "provider-chains",
+  "label": "Chains",
+  "description": "Define named provider fallback chains and assign them to cron jobs, blueprints, and profiles.",
+  "icon": "Link",
+  "version": "1.0.0",
+  "tab": {
+    "path": "/chains",
+    "position": "after:skills"
+  },
+  "entry": "dist/index.js",
+  "css": "dist/style.css",
+  "api": "plugin_api.py"
+}
