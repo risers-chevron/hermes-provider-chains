@@ -21,7 +21,13 @@ Define an ordered list of providers once, assign the chain by name anywhere Herm
 
 ## Install
 
-As a one line command:
+As a command in Hermes cli (this will enable it so you don't need to edit the `config.yaml`):
+
+```bash
+hermes plugins install risers-chevron/hermes-provider-chains --enable
+```
+
+Or as a one line command:
 ```bash
 git clone https://github.com/risers-chevron/hermes-provider-chains ~/.hermes/plugins/provider-chains
 ```
