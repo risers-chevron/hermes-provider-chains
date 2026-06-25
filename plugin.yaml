@@ -1,5 +1,8 @@
 name: provider-chains
 version: 1.1.0
-kind: standalone
+kind: backend
 description: "Named provider fallback chains — define ordered provider pools and assign them like a model anywhere in Hermes (cron jobs, blueprints, profiles, subagents)."
 author: "risers-chevron"
+
+provides_model_providers:
+  - provider-chains
