@@ -9,6 +9,9 @@ A [Hermes](https://nousresearch.com/hermes) plugin that adds named provider fall
 
 Define an ordered list of providers once, assign the chain by name anywhere Hermes accepts a model — cron jobs, blueprints, profiles, subagents. When the first provider fails (rate limit, outage, timeout), Hermes automatically tries the next one in the chain.
 
+![Hermes dashboard](Hermes-dashboard.png)
+
+
 ## What it adds
 
 - **Chains tab** in the Hermes dashboard — create, edit, and reorder chains via a UI
